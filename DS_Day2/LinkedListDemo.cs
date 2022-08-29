@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DS_Day2
 {
-    class SinglyLinkedListNodeDemo
+  public  class SinglyLinkedListNodeDemo
     {
         int data;
       internal  SinglyLinkedListNodeDemo next;
@@ -18,7 +18,7 @@ namespace DS_Day2
         }
     }
 
-    class DoublyLinkedListNodeDemo
+   public class DoublyLinkedListNodeDemo
     {
         internal int data;
         internal DoublyLinkedListNodeDemo head;
@@ -34,7 +34,7 @@ namespace DS_Day2
 
     }
 
-    class UserSingleLinkedList
+    public class UserSingleLinkedList
     {
         SinglyLinkedListNodeDemo head;
 
@@ -84,7 +84,7 @@ namespace DS_Day2
         }
     }
 
-    class UserDoubleLinkedList
+   public class UserDoubleLinkedList
     {
        internal DoublyLinkedListNodeDemo head;
         void InsertNodeInFront(UserDoubleLinkedList list, int dataToInsert)
@@ -95,6 +95,8 @@ namespace DS_Day2
             node.prev = null;
             if (list.head!=null)
             {
+                list.head.prev = node;
+                list.head.prev = node;
                 list.head.prev = node;
             }
           
@@ -111,6 +113,7 @@ namespace DS_Day2
                 return;
 
             }
+
 
 
             DoublyLinkedListNodeDemo newnode = new DoublyLinkedListNodeDemo(data);
