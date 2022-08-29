@@ -8,7 +8,7 @@ namespace DS_Day2
 {
   public  class SinglyLinkedListNodeDemo
     {
-        int data;
+      internal  int data;
       internal  SinglyLinkedListNodeDemo next;
 
         public SinglyLinkedListNodeDemo(int d)
@@ -81,6 +81,23 @@ namespace DS_Day2
             SinglyLinkedListNodeDemo newnode = new SinglyLinkedListNodeDemo(data);
             newnode.next = prevNode.next;
             prevNode.next = newnode;
+        }
+
+        void DeleteByFindingData(UserSingleLinkedList list, int dataToDelete)
+        {
+
+            SinglyLinkedListNodeDemo temp = list.head;
+            SinglyLinkedListNodeDemo prev = null;
+            if (temp!=null && temp.data==dataToDelete)
+            {
+                prev = temp;
+                temp = temp.next;
+            }
+            if (temp==null)
+            {
+                return;
+            }
+            prev.next = temp.next;
         }
     }
 
