@@ -120,6 +120,34 @@ namespace DS_Day2
 
         }
 
+        void DeleteByFindingData(UserDoubleLinkedList list, int data)
+        {
+            DoublyLinkedListNodeDemo temp = list.head;
+            if (temp != null && temp.data == data)
+            {
+                list.head = temp;
+                list.head.prev = temp.next;
+                list.head.prev = null;
+            }
+            while (temp != null && temp.data != data)
+            {
+                temp = temp.next;
+            }
+            if(temp==null)
+            {
+                return;
+            }
+            if (temp.next!=null)
+            {
+                temp.next.prev = temp.prev;
+            }
+            if (temp.prev!=null)
+            {
+                temp.prev.next = temp.next;
+                   
+            }
+        }
+
 
 
         void InsertAfter(DoublyLinkedListNodeDemo prevnode, int data)
